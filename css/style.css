@@ -1,0 +1,256 @@
+  *{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+  }
+  /*//////////////////////////////////////////////////////header*/
+  .header {
+      background-color: rgb(10, 10, 10);
+      padding: 0 5%;
+  }
+  #trinikzlogo {
+      height: 25px;
+  }
+  .nav{
+      height: 4em;
+      margin-inline: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+  }
+  .nav-list{
+      overflow-x: hidden;
+      list-style: none;
+      display: flex;
+      gap: 25px;
+  }
+  /*//////////////////////////////////////////////////////body*/
+  body {
+      margin: 0;
+      background-color: rgb(255, 255, 255);
+  }
+  a{
+      transition: 0.2s;
+      text-decoration: none;
+      color: white;
+  }
+  a:hover{
+      transition: 0.5s;
+      color:rgb(252, 90, 144);
+  }
+  /*//////////////////////////////////////////////////////footer*/
+  footer{
+      display: flex;
+      justify-content: center;
+      background-color: rgb(10, 10, 10);
+      bottom: 0;
+      height: 15vh;
+      width: 100%;
+  
+  }
+  #footer-items{
+      font-size: 100%;
+      display: flex;
+      align-items: center;
+      color: rgb(146, 146, 146);
+  }
+  /*divs id*/
+  #container-1{
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    align-items: center;
+    overflow-y: hidden;
+  }
+  .points{
+    background-size: cover;
+    mix-blend-mode: color-burn;
+    z-index: 0;
+    position: absolute;
+    height: 155%;
+    width: 100%;
+  }
+  #bg-video{
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(80%)
+  }
+  #subtitleup{
+    font-family: IBM Plex Mono;
+    color: white;
+    display: flex;
+    position: absolute;
+    top: 30%;
+
+  }
+  #titlemain{
+    font-family: Montserrat;
+    text-shadow: 1px 1px rgba(0, 0, 0, 0.438);
+    color: aliceblue;
+    display: flex;
+    font-size: 700%;
+    position: absolute;
+    mix-blend-mode: difference;
+}
+  #button{
+    transition: 0.2s;
+    border: 0;
+    border-radius: 1px;
+    background-color: aliceblue;
+    font-family: Montserrat Subrayada;
+    color: black;
+    position: absolute;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    width: 120px;
+    bottom: 25%;
+  }
+  #button:hover{
+    transition: 0.2s;
+    background-color: rgb(10, 10, 10);
+    color: rgb(252, 90, 144);
+    
+  }
+  #container-2{
+      display: flex;
+      overflow-y: hidden;
+  }
+  #left_main{
+      float: left;
+      background-color: rgb(255, 255, 255);
+      height: 100%;
+      width: 50%;
+      padding: 10% 4%;
+  }
+  #right_main{
+      float: right;
+      background-color: rgb(0, 0, 0);
+      height: 100%;
+      width: 50%;
+      padding: 10% 4%;
+  }
+  /*titles*/
+  #title{
+      font-family: Montserrat;
+      font-size: 350%;
+      color: black;
+      display: flex;
+      justify-content: center;
+      overflow-x: hidden;
+  }
+  #subtitle{
+      font-size: 120%;
+      text-align: center;
+      display: flex;
+      color: black;
+      font-family: Jost;
+      justify-content: center;
+  }
+  #title2{
+    font-family: Montserrat;
+    font-size: 350%;
+    color: rgb(255, 255, 255);
+    display: flex;
+    justify-content: center;
+    overflow-x: hidden;
+}
+  #subtitle2{
+    font-size: 120%;
+    text-align: center;
+    display: flex;
+    color: white;
+    font-family: Jost;
+    justify-content: center;
+}
+  .container-mid{
+    background-color: rgb(10, 10, 10);
+    display: flex;
+    overflow-y: hidden;
+    height: 5em;
+    justify-content: center;
+    align-items: center;
+  }
+  #container-mid-p{
+    font-family: Bebas Neue;
+    font-size: 300%;
+    color: rgb(45, 45, 45);
+  }
+  #container-mid-p2{
+    font-family: Bebas Neue;
+    font-size: 300%;
+    color: rgb(45, 45, 45);
+  }
+  /*lower*/
+  .container-3{
+    display: flex;
+    justify-content: center;
+    position: relative;
+    align-items: center;
+    overflow-y: hidden;
+  }
+  .divspace{
+    position: relative;
+    display: flex;
+    height: 2rem;
+  }
+  #skilltitle{
+    text-align: left;
+    padding-left: 10%;
+  }
+  .cont3left{
+    float: left;
+    background-color: rgb(255, 255, 255);
+    height: 100%;
+    width: 50%;
+
+  }
+  .cont3right{
+    display: flex;
+    float: right;
+    background-color: rgb(255, 255, 255);
+    height: 100%;
+    width: 50%;
+    justify-content: center;
+  }
+  #skillimage{
+    display: flex;
+    width: 100%;
+    z-index: 0;
+  }
+  .aboutgimp{
+    text-align: left;
+    padding-left: 10%;
+  }
+  .aboutblender{
+    text-align: right;
+    padding-right: 10%;
+  }
+  .container-4{
+    display: flex;
+    justify-content: center;
+    position: relative;
+    align-items: center;
+    overflow-y: hidden;
+  }
+  .cont4left{
+    display: flex;
+    float: left;
+    background-color: rgb(255, 255, 255);
+    height: 100%;
+    width: 50%;
+    justify-content: center;
+
+  }
+  .cont4right{
+    float: right;
+    background-color: rgb(255, 255, 255);
+    height: 100%;
+    width: 50%;
+  }
