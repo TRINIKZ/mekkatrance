@@ -58,7 +58,7 @@
       align-items: center;
       color: rgb(146, 146, 146);
   }
-  /*divs id*/
+  /*/////////////////////////////////////////////////////divs id*/
   #container-1{
     height: 80vh;
     display: flex;
@@ -75,6 +75,7 @@
     height: 155%;
     width: 100%;
   }
+    /*/////////////////////////////////////////////////////video*/
   #bg-video{
     position: absolute;
     z-index: -1;
@@ -118,7 +119,7 @@
     transition: 0.2s;
     background-color: rgb(10, 10, 10);
     color: rgb(252, 90, 144);
-    
+  /*/////////////////////////////////////////////////////divs id*/ 
   }
   #container-2{
       display: flex;
