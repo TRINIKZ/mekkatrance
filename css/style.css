@@ -67,15 +67,33 @@
     align-items: center;
     overflow-y: hidden;
   }
-  .points{
-    background-size: cover;
-    mix-blend-mode: color-burn;
-    z-index: 0;
-    position: absolute;
-    height: 155%;
-    width: 100%;
+  .points {
+    /* Centralização */
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    /* Largura fixa para evitar distorção horizontal */
+    width: 190em; /* ou o valor fixo que você preferir */
+    
+    /* Altura responsiva */
+    height: auto;
+    min-height: 100%; /* valor mínimo - ajuste conforme necessário */
+    max-height: 80vh; /* altura máxima relativa à viewport */
+    
+    /* Configurações para a imagem de fundo */
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
   }
-    /*/////////////////////////////////////////////////////video*/
+  @media screen and (max-width: 500px) {
+    .points {
+        width: 100%; /* em telas muito pequenas, usa largura total */
+        min-width: 300px; /* largura mínima para evitar distorção */
+    }
+}
+  /*/////////////////////////////////////////////////////video*/
   #bg-video{
     position: absolute;
     z-index: -1;
@@ -97,9 +115,20 @@
     text-shadow: 1px 1px rgba(0, 0, 0, 0.438);
     color: aliceblue;
     display: flex;
-    font-size: 700%;
+    font-size: clamp(2rem, 8vw, 8rem);
     position: absolute;
     mix-blend-mode: difference;
+    width: 100%;
+    text-align: center;
+    margin: 0 auto;
+    padding: 0 20px;
+    white-space: normal;
+    word-wrap: break-word;
+    line-height: 1.2;
+    max-width: none;
+    min-width: auto;
+    box-sizing: border-box;
+    display: block;
 }
   #button{
     transition: 0.2s;
@@ -257,3 +286,11 @@
     height: 100%;
     width: 50%;
   }
+
+@media screen and (max-width: 768px) {
+    #titlemain {
+        font-size: clamp(1rem, 5vw, 4rem);
+        width: 100%;
+    }
+}
+
