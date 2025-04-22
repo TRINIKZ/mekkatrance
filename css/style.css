@@ -209,6 +209,16 @@
     justify-content: center;
     align-items: center;
   }
+  .container-mid2{
+    background-color: rgb(10, 10, 10);
+    display: flex;
+    overflow-y: hidden;
+    height: 5em;
+    justify-content: center;
+    align-items: center;
+    transform: rotate(-0deg);
+
+  }
   #container-mid-p{
     font-family: Bebas Neue;
     font-size: 300%;
@@ -218,6 +228,7 @@
     font-family: Bebas Neue;
     font-size: 300%;
     color: rgb(45, 45, 45);
+    transform: rotate(-0deg);
   }
   /*lower*/
   .container-3{
@@ -226,6 +237,7 @@
     position: relative;
     align-items: center;
     overflow-y: hidden;
+    margin-top: 1em;
   }
   .divspace{
     position: relative;
@@ -298,8 +310,8 @@
 .carousel-container {
   width: 100%;
   overflow: hidden;
-  transform: rotate(-3deg);
-  margin-top: -10em;
+  transform: rotate(-0deg);
+  margin-top: 1em;
   position: relative;
   height: 17em; /* agora bate com a altura das imagens */
   z-index: 4;
