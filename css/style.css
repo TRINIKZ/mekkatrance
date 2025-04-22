@@ -294,3 +294,36 @@
     }
 }
 
+  /*carousel*/
+.carousel-container {
+  width: 100%;
+  overflow: hidden;
+  transform: rotate(-3deg);
+  margin-top: -10em;
+  position: relative;
+  height: 17em; /* agora bate com a altura das imagens */
+  z-index: 4;
+}
+
+.carousel-track {
+  display: flex;
+  width: max-content; /* permite que ele se estenda conforme o conteúdo */
+  animation: scrollCarousel 30s linear infinite;
+}
+
+.carousel-track img {
+  height: 17em;
+  flex-shrink: 0;
+  object-fit: cover;
+  margin-right: 5px;
+  border-radius: 5%;
+}
+
+@keyframes scrollCarousel {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
