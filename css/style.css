@@ -1,339 +1,354 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IBM+Plex+Mono:wght@300;400;700&family=Jost:wght@300&family=Montserrat:ital,wght@1,900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat+Subrayada:wght@400;700&display=swap');
-  *{
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    margin: 0;
-    padding: 0;
-    overflow-x: hidden;
-    scroll-behavior: smooth;
-  }
-  /*//////////////////////////////////////////////////////header*/
-  .header {
-      background-color: rgb(10, 10, 10);
-      padding: 0 5%;
-  }
-  #trinikzlogo {
-      height: 25px;
-  }
-    @media screen and (max-width: 500px) {
-      #trinikzlogo {
-        height: 15px;
-    }
-    }
-      
-  .nav{
-      height: 4em;
-      margin-inline: auto;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-  }
-  .nav-list{
-      overflow-x: hidden;
-      list-style: none;
-      display: flex;
-      gap: 25px;
-  }
-    @media screen and (max-width: 500px) {
-    .nav-list {
-      font-size: 70%;
-      left: auto;
-      }
-    }
-  /*//////////////////////////////////////////////////////body*/
-  body {
-      margin: 0;
-      background-color: rgb(255, 255, 255);
-  }
-  a{
-      transition: 0.2s;
-      text-decoration: none;
-      color: white;
-  }
-  a:hover{
-      transition: 0.5s;
-      color:rgb(252, 90, 144);
-  }
-  /*//////////////////////////////////////////////////////footer*/
-  footer{
-      display: flex;
-      justify-content: center;
-      background-color: rgb(10, 10, 10);
-      bottom: 0;
-      height: 15vh;
-      width: 100%;
-  
-  }
-  #footer-items{
-      font-size: 100%;
-      display: flex;
-      align-items: center;
-      color: rgb(146, 146, 146);
-  }
-  /*/////////////////////////////////////////////////////divs id*/
-  .container-home {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 85vh;
-    width: 100%;
-    overflow: hidden;
-  }
-  @media screen and (max-width: 1070px) {
-    .container-home {
-      height: 80vw;
-      }
-    }
-  @media screen and (max-width: 768px) {
-    .container-home {
-      height: 120vw; /* zoom horizontal */
-    }
-  }
-  
-  .about-me {
-    background-color: rgba(0, 0, 0, 0.1); /* fundo sutil semi-transparente */
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px); /* compatibilidade com Safari */
-    background-size: cover;
-    background-repeat: repeat;
-    
-    display: flex;
-    z-index: 5;
-    align-items: center;
-    text-align: center;
-    position: absolute;
-    padding: 1%;
-    top: 75%;
-    left: 6%;
-    border-radius: 50px;
-    justify-content: center;
-    color: white;
+
+* {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
-  @media screen and (max-width: 768px) {
+/*//////////////////////////////////////////////////////header*/
+.header {
+  background-color: rgb(10, 10, 10);
+  padding: 0 5%;
+}
+
+#trinikzlogo {
+  height: 25px;
+}
+
+@media screen and (max-width: 500px) {
+  #trinikzlogo {
+    height: 15px;
+  }
+}
+
+.nav {
+  height: 4em;
+  margin-inline: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-list {
+  overflow-x: hidden;
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
+
+@media screen and (max-width: 500px) {
+  .nav-list {
+    font-size: 70%;
+    left: auto;
+  }
+}
+
+/*//////////////////////////////////////////////////////body*/
+body {
+  margin: 0;
+  background-color: rgb(255, 255, 255);
+}
+
+a {
+  transition: 0.2s;
+  text-decoration: none;
+  color: white;
+}
+
+a:hover {
+  transition: 0.5s;
+  color: rgb(252, 90, 144);
+}
+
+/*//////////////////////////////////////////////////////footer*/
+footer {
+  display: flex;
+  justify-content: center;
+  background-color: rgb(10, 10, 10);
+  bottom: 0;
+  height: 15vh;
+  width: 100%;
+}
+
+#footer-items {
+  font-size: 100%;
+  display: flex;
+  align-items: center;
+  color: rgb(146, 146, 146);
+}
+
+/*/////////////////////////////////////////////////////divs id*/
+.container-home {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 85vh;
+  width: 100%;
+  overflow: hidden;
+}
+
+@media screen and (max-width: 1070px) {
+  .container-home {
+    height: 80vw;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .container-home {
+    height: 120vw;
+  }
+}
+
+.about-me {
+  background-color: rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  background-size: cover;
+  background-repeat: repeat;
+  display: flex;
+  z-index: 5;
+  align-items: center;
+  text-align: center;
+  position: absolute;
+  padding: 1%;
+  top: 75%;
+  left: 6%;
+  border-radius: 50px;
+  justify-content: center;
+  color: white;
+}
+
+@media screen and (max-width: 768px) {
   .about-me {
     top: 80%;
     left: auto;
     padding: 0.5%;
-    }
   }
-  @media screen and (max-width: 500px) {
-    .about-me {
-      top: 70%;
-      left: auto;
-      }
-    }
+}
 
-  .propic{
-    height: 3.5em;
+@media screen and (max-width: 500px) {
+  .about-me {
+    top: 70%;
+    left: auto;
+  }
+}
+
+.propic {
+  height: 3.5em;
+  border-radius: 50%;
+  padding: 10px;
+}
+
+@media screen and (max-width: 500px) {
+  .propic {
+    height: 2.5em;
     border-radius: 50%;
     padding: 10px;
   }
-  @media screen and (max-width: 500px) {
-    .propic {
-      height: 2.5em;
-      border-radius: 50%;
-      padding: 10px;
-      }
-    }
+}
 
-  .home-layer {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    height: auto;
-    width: 100vw;
-    max-height: none;
-    object-fit: cover;
-    z-index: 1;
-    pointer-events: none;
-  }
-  
-  /* Camadas */
-  .home-base {
-    z-index: 1;
-  }
-  
-  .home-mid  { z-index: 2; 
+.home-layer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: auto;
+  width: 100vw;
+  max-height: none;
+  object-fit: cover;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.home-base {
+  z-index: 1;
+}
+
+.home-mid {
+  z-index: 2;
   will-change: transform;
   mix-blend-mode: luminosity;
-  }
-  @media screen and (max-width: 768px) {
-    .home-mid {
-      margin-left: -17vh;
-      margin-top: -12vh;
-    }
-  }
-
-  @media screen and (max-width: 500px) {
-    .home-mid {
-      margin-left: -12vh;
-      margin-top: -12vh;
-    }
-  }
-
-  .home-top  { z-index: 3;
-    will-change: filter;
-    filter: blur(0px); /* valor inicial */
-  }
-  
-  /* Mobile: dá zoom horizontal (largura maior que a tela) */
-  @media screen and (max-width: 768px) {
-    .home-layer {
-      width: 120vw; /* zoom horizontal */
-    }
-  }
-
-  #container-1{
-    height: 80vh;
-    display: flex;
-    justify-content: center;
-    position: relative;
-    align-items: center;
-    overflow-y: hidden;
-  }
-  .points {
-    /* Centralização */
-    margin: 0 auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    
-    /* Largura fixa para evitar distorção horizontal */
-    width: 190em; /* ou o valor fixo que você preferir */
-    
-    /* Altura responsiva */
-    height: auto;
-    min-height: 100%; /* valor mínimo - ajuste conforme necessário */
-    max-height: 80vh; /* altura máxima relativa à viewport */
-    
-    /* Configurações para a imagem de fundo */
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
-  }
-  @media screen and (max-width: 500px) {
-    .points {
-        width: 100%; /* em telas muito pequenas, usa largura total */
-        min-width: 300px; /* largura mínima para evitar distorção */
-    }
 }
-  /*/////////////////////////////////////////////////////video*/
-  #bg-video{
-    position: absolute;
-    z-index: -1;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    filter: brightness(80%)
-  }
-  #subtitleup{
-    font-family: IBM Plex Mono;
-    color: white;
-    display: flex;
-    position: absolute;
-    top: 30%;
 
+@media screen and (max-width: 768px) {
+  .home-mid {
+    margin-left: -17vh;
+    margin-top: -12vh;
   }
-  #titlemain{
-    font-family: Montserrat;
-    text-shadow: 1px 1px rgba(0, 0, 0, 0.438);
-    color: aliceblue;
-    display: flex;
-    font-size: clamp(2rem, 8vw, 8rem);
-    position: absolute;
-    mix-blend-mode: difference;
+}
+
+@media screen and (max-width: 500px) {
+  .home-mid {
+    margin-left: -12vh;
+    margin-top: -12vh;
+  }
+}
+
+.home-top {
+  z-index: 3;
+  will-change: filter;
+  filter: blur(0px);
+}
+
+@media screen and (max-width: 768px) {
+  .home-layer {
+    width: 120vw;
+  }
+}
+
+#container-1 {
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  align-items: center;
+  overflow-y: hidden;
+}
+
+.points {
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 190em;
+  height: auto;
+  min-height: 100%;
+  max-height: 80vh;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+@media screen and (max-width: 500px) {
+  .points {
     width: 100%;
-    text-align: center;
-    margin: 0 auto;
-    padding: 0 20px;
-    white-space: normal;
-    word-wrap: break-word;
-    line-height: 1.2;
-    max-width: none;
-    min-width: auto;
-    box-sizing: border-box;
-    display: block;
+    min-width: 300px;
+  }
+}
+
+/*/////////////////////////////////////////////////////video*/
+#bg-video {
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(80%);
+}
+
+#subtitleup {
+  font-family: IBM Plex Mono;
+  color: white;
+  display: flex;
+  position: absolute;
+  top: 30%;
+}
+
+#titlemain {
+  font-family: Montserrat;
+  text-shadow: 1px 1px rgba(0, 0, 0, 0.438);
+  color: aliceblue;
+  display: block;
+  font-size: clamp(2rem, 8vw, 8rem);
+  position: absolute;
+  mix-blend-mode: difference;
+  width: 100%;
+  text-align: center;
+  margin: 0 auto;
+  padding: 0 20px;
+  white-space: normal;
+  word-wrap: break-word;
+  line-height: 1.2;
+  max-width: none;
+  min-width: auto;
+  box-sizing: border-box;
 }
 
 @media screen and (max-width: 768px) {
   #titlemain {
-      font-size: clamp(1rem, 10vw, 4rem);
-      width: 150%;
+    font-size: clamp(1rem, 10vw, 4rem);
+    width: 150%;
   }
 }
 
-  #button{
-    transition: 0.2s;
-    border: 0;
-    border-radius: 1px;
-    background-color: aliceblue;
-    font-family: Montserrat Subrayada;
-    color: black;
-    position: absolute;
-    align-items: center;
-    justify-content: center;
-    height: 40px;
-    width: 120px;
-    bottom: 25%;
-  }
-  #button:hover{
-    transition: 0.2s;
-    background-color: rgb(10, 10, 10);
-    color: rgb(252, 90, 144);
-  /*/////////////////////////////////////////////////////divs id*/ 
-  }
-  #container-2{
-      display: flex;
-      overflow-y: hidden;
-  }
-  #left_main{
-      float: left;
-      background-color: rgb(255, 255, 255);
-      height: 100%;
-      width: 50%;
-      padding: 10% 4%;
-  }
-  #right_main{
-      float: right;
-      background-color: rgb(0, 0, 0);
-      height: 100%;
-      width: 50%;
-      padding: 10% 4%;
-  }
-  /*titles*/
-  #title{
-      font-family: Montserrat;
-      font-size: 350%;
-      color: black;
-      display: flex;
-      justify-content: center;
-      overflow-x: hidden;
-  }
+#button {
+  transition: 0.2s;
+  border: 0;
+  border-radius: 1px;
+  background-color: aliceblue;
+  font-family: Montserrat Subrayada;
+  color: black;
+  position: absolute;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  width: 120px;
+  bottom: 25%;
+}
 
-  @media screen and (max-width: 768px) {
-    #title {
-      font-size: 250%;
-    }
-  }
+#button:hover {
+  transition: 0.2s;
+  background-color: rgb(10, 10, 10);
+  color: rgb(252, 90, 144);
+}
 
-  #subtitle{
-      font-size: 120%;
-      text-align: center;
-      display: flex;
-      color: black;
-      font-family: Jost;
-      justify-content: center;
+#container-2 {
+  display: flex;
+  overflow-y: hidden;
+}
+
+#left_main {
+  float: left;
+  background-color: rgb(255, 255, 255);
+  height: 100%;
+  width: 50%;
+  padding: 10% 4%;
+}
+
+#right_main {
+  float: right;
+  background-color: rgb(0, 0, 0);
+  height: 100%;
+  width: 50%;
+  padding: 10% 4%;
+}
+
+#title {
+  font-family: Montserrat;
+  font-size: 350%;
+  color: black;
+  display: flex;
+  justify-content: center;
+  overflow-x: hidden;
+}
+
+@media screen and (max-width: 768px) {
+  #title {
+    font-size: 250%;
   }
-  #title2{
-    font-family: Montserrat;
-    font-size: 350%;
-    color: rgb(255, 255, 255);
-    display: flex;
-    justify-content: center;
-    overflow-x: hidden;
+}
+
+#subtitle {
+  font-size: 120%;
+  text-align: center;
+  display: flex;
+  color: black;
+  font-family: Jost;
+  justify-content: center;
+}
+
+#title2 {
+  font-family: Montserrat;
+  font-size: 350%;
+  color: rgb(255, 255, 255);
+  display: flex;
+  justify-content: center;
+  overflow-x: hidden;
 }
 
 @media screen and (max-width: 768px) {
@@ -342,123 +357,130 @@
   }
 }
 
-  #subtitle2{
-    font-size: 120%;
-    text-align: center;
-    display: flex;
-    color: white;
-    font-family: Jost;
-    justify-content: center;
+#subtitle2 {
+  font-size: 120%;
+  text-align: center;
+  display: flex;
+  color: white;
+  font-family: Jost;
+  justify-content: center;
 }
 
-  .container-mid{
-    background-color: rgb(10, 10, 10);
-    display: flex;
-    overflow-y: hidden;
-    height: 5em;
-    justify-content: center;
-    align-items: center;
-  }
+.container-mid {
+  background-color: rgb(10, 10, 10);
+  display: flex;
+  overflow-y: hidden;
+  height: 5em;
+  justify-content: center;
+  align-items: center;
+}
 
-  #container-mid-p{
-    display: inline-block;
-    font-family: Bebas Neue;
-    font-size: 300%;
-    color: rgb(45, 45, 45);
-    white-space: nowrap;
-    min-width: max-content
-  }
+#container-mid-p {
+  display: inline-block;
+  font-family: Bebas Neue;
+  font-size: 300%;
+  color: rgb(45, 45, 45);
+  white-space: nowrap;
+  min-width: max-content;
+}
 
-  /*lower*/
-  .container-3{
-    display: flex;
-    justify-content: center;
-    position: relative;
-    align-items: center;
-    overflow-y: hidden;
-    margin-top: 1em;
-  }
-  .divspace{
-    position: relative;
-    display: flex;
-    height: 2rem;
-  }
-  #skilltitle{
-    text-align: left;
-    padding-left: 10%;
-  }
-  .cont3left{
-    float: left;
-    background-color: rgb(255, 255, 255);
-    height: 100%;
-    width: 50%;
+.container-3 {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  align-items: center;
+  overflow-y: hidden;
+  margin-top: 1em;
+}
 
-  }
-  .cont3right{
-    display: flex;
-    float: right;
-    background-color: rgb(255, 255, 255);
-    height: 100%;
-    width: 50%;
-    justify-content: center;
-  }
-  #skillimage{
-    display: flex;
-    width: 100%;
-    z-index: 0;
-  }
-  .aboutgimp{
-    text-align: left;
-    padding-left: 10%;
-  }
-  .aboutblender{
-    text-align: right;
-    padding-right: 10%;
-  }
-  .container-4{
-    display: flex;
-    justify-content: center;
-    position: relative;
-    align-items: center;
-    overflow-y: hidden;
-  }
-  .cont4left{
-    display: flex;
-    float: left;
-    background-color: rgb(255, 255, 255);
-    height: 100%;
-    width: 50%;
-    justify-content: center;
+.divspace {
+  position: relative;
+  display: flex;
+  height: 2rem;
+}
 
-  }
-  .cont4right{
-    float: right;
-    background-color: rgb(255, 255, 255);
-    height: 100%;
-    width: 50%;
-  }
+#skilltitle {
+  text-align: left;
+  padding-left: 10%;
+}
 
+.cont3left {
+  float: left;
+  background-color: rgb(255, 255, 255);
+  height: 100%;
+  width: 50%;
+}
 
-  /*carousel*/
+.cont3right {
+  display: flex;
+  float: right;
+  background-color: rgb(255, 255, 255);
+  height: 100%;
+  width: 50%;
+  justify-content: center;
+}
+
+#skillimage {
+  display: flex;
+  width: 100%;
+  z-index: 0;
+}
+
+.aboutgimp {
+  text-align: left;
+  padding-left: 10%;
+}
+
+.aboutblender {
+  text-align: right;
+  padding-right: 10%;
+}
+
+.container-4 {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  align-items: center;
+  overflow-y: hidden;
+}
+
+.cont4left {
+  display: flex;
+  float: left;
+  background-color: rgb(255, 255, 255);
+  height: 100%;
+  width: 50%;
+  justify-content: center;
+}
+
+.cont4right {
+  float: right;
+  background-color: rgb(255, 255, 255);
+  height: 100%;
+  width: 50%;
+}
+
+/*carousel*/
 .carousel-container {
   width: 100%;
   overflow: hidden;
   transform: rotate(-0deg);
   margin-top: 1em;
-  position: relative; /* agora bate com a altura das imagens */
+  position: relative;
   z-index: 4;
 }
 
 .carousel-track {
   display: flex;
-  width: max-content; /* permite que ele se estenda conforme o conteúdo */
+  width: max-content;
   animation: scrollCarousel 30s linear infinite;
 }
-  @media screen and (max-width: 500px){
-    .carousel-track {
-      animation: scrollCarousel 20s linear infinite;
-    }
+
+@media screen and (max-width: 500px) {
+  .carousel-track {
+    animation: scrollCarousel 20s linear infinite;
   }
+}
 
 .carousel-track img {
   height: 17em;
@@ -467,13 +489,14 @@
   margin-right: 5px;
   border-radius: 5%;
 }
-  @media screen and (max-width: 500px) {
+
+@media screen and (max-width: 500px) {
   .carousel-track img {
     height: 7em;
   }
 }
 
-  @keyframes scrollCarousel {
+@keyframes scrollCarousel {
   from {
     transform: translateX(0);
   }
