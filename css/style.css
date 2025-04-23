@@ -64,9 +64,14 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 93vh;
+    height: 94vh;
     width: 100%;
     overflow: hidden;
+  }
+  @media screen and (max-width: 768px) {
+    .container-home {
+      height: 120vw; /* zoom horizontal */
+    }
   }
   
   .home-layer {
@@ -89,6 +94,12 @@
   
   .home-mid  { z-index: 2; 
   will-change: transform;
+  }
+  @media screen and (max-width: 768px) {
+    .home-mid {
+      margin-left: -7vh;
+      margin-top: -7vh;
+    }
   }
   .home-top  { z-index: 3;
     will-change: filter;
@@ -173,6 +184,14 @@
     box-sizing: border-box;
     display: block;
 }
+
+@media screen and (max-width: 768px) {
+  #titlemain {
+      font-size: clamp(1rem, 10vw, 4rem);
+      width: 150%;
+  }
+}
+
   #button{
     transition: 0.2s;
     border: 0;
@@ -220,6 +239,13 @@
       justify-content: center;
       overflow-x: hidden;
   }
+
+  @media screen and (max-width: 768px) {
+    #title {
+      font-size: 250%;
+    }
+  }
+
   #subtitle{
       font-size: 120%;
       text-align: center;
@@ -236,6 +262,13 @@
     justify-content: center;
     overflow-x: hidden;
 }
+
+@media screen and (max-width: 768px) {
+  #title2 {
+    font-size: 250%;
+  }
+}
+
   #subtitle2{
     font-size: 120%;
     text-align: center;
@@ -342,12 +375,6 @@
     width: 50%;
   }
 
-@media screen and (max-width: 768px) {
-    #titlemain {
-        font-size: clamp(1rem, 5vw, 4rem);
-        width: 100%;
-    }
-}
 
   /*carousel*/
 .carousel-container {
