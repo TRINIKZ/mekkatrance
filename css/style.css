@@ -59,6 +59,49 @@
       color: rgb(146, 146, 146);
   }
   /*/////////////////////////////////////////////////////divs id*/
+  .container-home {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 93vh;
+    width: 100%;
+    overflow: hidden;
+  }
+  
+  .home-layer {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: auto;
+    width: 100vw;
+    max-height: none;
+    object-fit: cover;
+    z-index: 1;
+    pointer-events: none;
+  }
+  
+  /* Camadas */
+  .home-base {
+    z-index: 1;
+  }
+  
+  .home-mid  { z-index: 2; 
+  will-change: transform;
+  }
+  .home-top  { z-index: 3;
+    will-change: filter;
+    filter: blur(0px); /* valor inicial */
+  }
+  
+  /* Mobile: dá zoom horizontal (largura maior que a tela) */
+  @media screen and (max-width: 768px) {
+    .home-layer {
+      width: 120vw; /* zoom horizontal */
+    }
+  }
+
   #container-1{
     height: 80vh;
     display: flex;
