@@ -68,6 +68,11 @@
     width: 100%;
     overflow: hidden;
   }
+  @media screen and (max-width: 1070px) {
+    .container-home {
+      height: 80vw;
+      }
+    }
   @media screen and (max-width: 768px) {
     .container-home {
       height: 120vw; /* zoom horizontal */
@@ -93,10 +98,11 @@
     justify-content: center;
     color: white;
 }
+
   @media screen and (max-width: 768px) {
   .about-me {
-  top: 75%;
-  left: 20%;
+    top: 53vh;
+    left: auto;
     }
   }
 
