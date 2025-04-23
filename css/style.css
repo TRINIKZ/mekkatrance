@@ -91,7 +91,7 @@
     align-items: center;
     text-align: center;
     position: absolute;
-    padding: 1vh;
+    padding: 1%;
     top: 75%;
     left: 6%;
     border-radius: 50px;
@@ -101,16 +101,30 @@
 
   @media screen and (max-width: 768px) {
   .about-me {
-    top: 53vh;
+    top: 80%;
     left: auto;
+    padding: 0.5%;
     }
   }
+  @media screen and (max-width: 500px) {
+    .about-me {
+      top: 70%;
+      left: auto;
+      }
+    }
 
   .propic{
     height: 3.5em;
     border-radius: 50%;
     padding: 10px;
   }
+  @media screen and (max-width: 500px) {
+    .propic {
+      height: 2.5em;
+      border-radius: 50%;
+      padding: 10px;
+      }
+    }
 
   .home-layer {
     position: absolute;
@@ -136,10 +150,18 @@
   }
   @media screen and (max-width: 768px) {
     .home-mid {
-      margin-left: -14vh;
+      margin-left: -17vh;
       margin-top: -12vh;
     }
   }
+
+  @media screen and (max-width: 500px) {
+    .home-mid {
+      margin-left: -12vh;
+      margin-top: -12vh;
+    }
+  }
+
   .home-top  { z-index: 3;
     will-change: filter;
     filter: blur(0px); /* valor inicial */
@@ -421,8 +443,7 @@
   overflow: hidden;
   transform: rotate(-0deg);
   margin-top: 1em;
-  position: relative;
-  height: 17em; /* agora bate com a altura das imagens */
+  position: relative; /* agora bate com a altura das imagens */
   z-index: 4;
 }
 
@@ -431,6 +452,11 @@
   width: max-content; /* permite que ele se estenda conforme o conteúdo */
   animation: scrollCarousel 30s linear infinite;
 }
+  @media screen and (max-width: 500px){
+    .carousel-track {
+      animation: scrollCarousel 20s linear infinite;
+    }
+  }
 
 .carousel-track img {
   height: 17em;
@@ -439,8 +465,13 @@
   margin-right: 5px;
   border-radius: 5%;
 }
+  @media screen and (max-width: 500px) {
+  .carousel-track img {
+    height: 7em;
+  }
+}
 
-@keyframes scrollCarousel {
+  @keyframes scrollCarousel {
   from {
     transform: translateX(0);
   }
