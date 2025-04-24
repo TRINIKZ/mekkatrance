@@ -265,6 +265,13 @@ footer {
   filter: brightness(80%);
 }
 
+#bgd-video {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 #subtitleup {
   font-family: IBM Plex Mono;
   color: white;
