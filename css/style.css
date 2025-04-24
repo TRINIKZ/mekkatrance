@@ -324,7 +324,7 @@ footer {
 
 #container-2 {
   display: flex;
-  overflow-y: hidden;
+  
 }
 
 #left_main {
@@ -335,12 +335,23 @@ footer {
   padding: 10% 4%;
 }
 
+@media screen and (max-width: 500px) {
+  #left_main {
+    height: 19vh;
+  }
+}
+
 #right_main {
   float: right;
   background-color: rgb(0, 0, 0);
   height: 100%;
   width: 50%;
   padding: 10% 4%;
+}
+@media screen and (max-width: 500px) {
+  #right_main {
+    height: 19vh;
+  }
 }
 
 #title {
@@ -367,7 +378,8 @@ footer {
 
 #subtitle {
   font-size: 120%;
-  text-align: justify;  display: flex;
+  text-align: justify;  
+  display: flex;
   color: black;
   font-family: Jost;
   justify-content: center;
@@ -462,6 +474,11 @@ footer {
   display: flex;
   width: 100%;
   z-index: 0;
+}
+@media screen and (max-width: 500px) {
+  #skillimage{
+    display: none;
+  }
 }
 
 .aboutgimp {
