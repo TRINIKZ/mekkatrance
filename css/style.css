@@ -356,6 +356,8 @@ footer {
 #title {
   z-index: 1;
   font-family: Montserrat;
+  font-weight: 900;
+  font-style: italic;
   font-size: 350%;
   color: black;
   display: flex;
@@ -387,6 +389,8 @@ footer {
 #title2 {
   z-index: 1;
   font-family: Montserrat;
+  font-weight: 900;
+  font-style: italic;
   font-size: 350%;
   color: rgb(255, 255, 255);
   display: flex;
