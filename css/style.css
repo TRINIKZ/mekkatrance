@@ -104,6 +104,12 @@ footer {
   }
 }
 
+@media screen and (max-width: 500px) {
+  .container-home {
+    height: 80vh;
+  }
+}
+
 .about-me {
   background-color: rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(10px);
@@ -127,13 +133,13 @@ footer {
   .about-me {
     top: 80%;
     left: auto;
-    padding: 0.5%;
+    padding: 3%;
   }
 }
 
 @media screen and (max-width: 500px) {
   .about-me {
-    top: 70%;
+    top: 80%;
     left: auto;
   }
 }
@@ -148,7 +154,7 @@ footer {
   .propic {
     height: 2.5em;
     border-radius: 50%;
-    padding: 10px;
+    padding: 7px;
   }
 }
 
@@ -165,8 +171,26 @@ footer {
   pointer-events: none;
 }
 
+@media screen and (max-width: 768px) {
+  .home-layer {
+    width: 120vw;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .home-layer {
+    height: 80vh;
+  }
+}
+
 .home-base {
   z-index: 1;
+}
+
+@media screen and (max-width: 500px) {
+  .home-base {
+    margin-left: -2vh;
+  }
 }
 
 .home-mid {
@@ -184,8 +208,9 @@ footer {
 
 @media screen and (max-width: 500px) {
   .home-mid {
+    height: 400px;
     margin-left: -12vh;
-    margin-top: -12vh;
+    margin-top: -18vh;
   }
 }
 
@@ -194,12 +219,12 @@ footer {
   will-change: filter;
   filter: blur(0px);
 }
-
-@media screen and (max-width: 768px) {
-  .home-layer {
-    width: 120vw;
+@media screen and (max-width: 500px) {
+  .home-top {
+    margin-left: -2vh;
   }
 }
+
 
 #container-1 {
   height: 80vh;
@@ -319,6 +344,7 @@ footer {
 }
 
 #title {
+  z-index: 1;
   font-family: Montserrat;
   font-size: 350%;
   color: black;
@@ -333,16 +359,22 @@ footer {
   }
 }
 
+@media screen and (max-width: 500px) {
+  #title {
+    font-size: 150%;
+  }
+}
+
 #subtitle {
   font-size: 120%;
-  text-align: center;
-  display: flex;
+  text-align: justify;  display: flex;
   color: black;
   font-family: Jost;
   justify-content: center;
 }
 
 #title2 {
+  z-index: 1;
   font-family: Montserrat;
   font-size: 350%;
   color: rgb(255, 255, 255);
@@ -357,9 +389,15 @@ footer {
   }
 }
 
+@media screen and (max-width: 500px) {
+  #title2 {
+    font-size: 150%;
+  }
+}
+
 #subtitle2 {
   font-size: 120%;
-  text-align: center;
+  text-align: justify;
   display: flex;
   color: white;
   font-family: Jost;
@@ -429,11 +467,13 @@ footer {
 .aboutgimp {
   text-align: left;
   padding-left: 10%;
+  text-align: justify;
 }
 
 .aboutblender {
   text-align: right;
   padding-right: 10%;
+  text-align: justify;
 }
 
 .container-4 {
