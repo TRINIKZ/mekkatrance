@@ -1,8 +1,11 @@
 function redpage() {
     window.location.href = "html/myFiles.html";
 }
-document.getElementById("button").addEventListener("click", redpage);
-
+document.getElementById("button").addEventListener("click", () => {
+  const panel = document.getElementById("model-panel");
+  panel.classList.remove("hidden");
+  panel.classList.add("active");
+});
 
 window.addEventListener("scroll", () => {
     const scrollY = window.scrollY;
