@@ -520,6 +520,36 @@ footer {
   width: 50%;
 }
 
+@media screen and (max-width: 500px){
+  
+.container-3,
+.container-4 {
+  flex-direction: column;
+  text-align: center;
+  padding: 20px;
+}
+
+.cont3left,
+.cont3right,
+.cont4left,
+.cont4right {
+  width: 100%;
+  float: none;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.aboutgimp,
+.aboutblender {
+  padding-left: 0;
+  padding-right: 0;
+  text-align: justify;
+}
+
+}
+
 /*carousel*/
 .carousel-container {
   width: 100%;
@@ -552,7 +582,7 @@ footer {
 
 @media screen and (max-width: 500px) {
   .carousel-track img {
-    height: 7em;
+    height: 12em;
   }
 }
 
