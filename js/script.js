@@ -26,14 +26,57 @@ window.addEventListener("scroll", () => {
     // Blur dinâmico na camada base
     const baseLayer = document.querySelector(".home-mid");
     if (baseLayer) {
-      const blurAmount = Math.min(scrollY / 50, 10); // máx 10px
+      const blurAmount = Math.min(scrollY / 50, 5); // máx 10px
       baseLayer.style.filter = `blur(${blurAmount}px)`;
     }
   });
   
-
 //carrossel
 window.addEventListener("load", () => {
     const track = document.querySelector(".carousel-track");
     track.style.animationPlayState = "running";
   });
+
+//hack
+const chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890!@#$%^&*";
+const elements = document.querySelectorAll(".home-text-line, #container-mid-p, #button");
+
+function scrambleText(element) {
+  const targetText = element.textContent;
+  let iterations = 0;
+
+  const interval = setInterval(() => {
+    const displayed = targetText
+      .split("")
+      .map((char, i) => {
+        if (i < iterations) {
+          return char;
+        }
+        return chars[Math.floor(Math.random() * chars.length)];
+      })
+      .join("");
+
+    element.textContent = displayed;
+
+    if (iterations >= targetText.length) {
+      clearInterval(interval);
+    }
+
+    iterations += 1 / 2;
+  }, 20);
+}
+
+elements.forEach(element => {
+  // Efeito quando a página carrega (no load)
+  scrambleText(element);
+
+  // Efeito quando passar o mouse
+  element.addEventListener("mouseenter", () => {
+    scrambleText(element);
+  });
+
+  // Reseta o texto quando o mouse sai
+  element.addEventListener("mouseleave", () => {
+    element.textContent = element.textContent;
+  });
+});
