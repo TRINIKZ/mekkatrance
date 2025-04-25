@@ -39,7 +39,7 @@ window.addEventListener("load", () => {
 
 //hack
 const chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890!@#$%^&*";
-const elements = document.querySelectorAll(".home-text-line, #container-mid-p, #button");
+const elements = document.querySelectorAll(".home-text-line, #button");
 
 function scrambleText(element) {
   const targetText = element.textContent;

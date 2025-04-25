@@ -313,6 +313,7 @@ footer {
 }
 
 #subtitleup {
+  z-index: 2;
   font-family: IBM Plex Mono;
   color: white;
   display: flex;
