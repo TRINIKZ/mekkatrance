@@ -41,8 +41,13 @@ window.addEventListener("load", () => {
 const chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890!@#$%^&*";
 const elements = document.querySelectorAll(".home-text-line, #button");
 
+// Salva o texto original em data-original
+elements.forEach(el => {
+  el.dataset.originalText = el.textContent;
+});
+
 function scrambleText(element) {
-  const targetText = element.textContent;
+  const targetText = element.dataset.originalText;
   let iterations = 0;
 
   const interval = setInterval(() => {
@@ -58,25 +63,23 @@ function scrambleText(element) {
 
     element.textContent = displayed;
 
+    iterations += 0.5;
     if (iterations >= targetText.length) {
       clearInterval(interval);
     }
-
-    iterations += 1 / 2;
   }, 20);
 }
 
 elements.forEach(element => {
-  // Efeito quando a página carrega (no load)
+  // Efeito quando a página carrega
   scrambleText(element);
 
-  // Efeito quando passar o mouse
   element.addEventListener("mouseenter", () => {
     scrambleText(element);
   });
 
-  // Reseta o texto quando o mouse sai
   element.addEventListener("mouseleave", () => {
-    element.textContent = element.textContent;
+    // Restaura o texto original
+    element.textContent = element.dataset.originalText;
   });
 });
