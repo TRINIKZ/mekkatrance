@@ -87,11 +87,12 @@ footer {
   position: absolute;
   z-index: 4;
 }
-@media screen and (max-width: 500px){
+@media screen and (max-width: 540px){
   .home-text {
     bottom: 30%;
     margin-bottom: 10px;
     margin-left: 1em;
+    display: none;
   }
 }
 
@@ -176,6 +177,13 @@ footer {
   }
 }
 
+@media screen and (max-width: 350px) {
+  .about-me {
+    top: 85%;
+    left: auto;
+  }
+}
+
 .propic {
   height: 3.5em;
   border-radius: 50%;
@@ -190,6 +198,14 @@ footer {
 @media screen and (max-width: 500px) {
   .propic {
     height: 2.5em;
+    border-radius: 50%;
+    padding: 7px;
+  }
+}
+
+@media screen and (max-width: 350px) {
+  .propic {
+    height: 2em;
     border-radius: 50%;
     padding: 7px;
   }

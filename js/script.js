@@ -39,7 +39,7 @@ window.addEventListener("load", () => {
 
 //hack
 const chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890!@#$%^&*";
-const elements = document.querySelectorAll(".home-text-line, #button");
+const elements = document.querySelectorAll(".home-text-line, #button, .nav-list a");
 
 // Salva o texto original em data-original
 elements.forEach(el => {
