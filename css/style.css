@@ -269,7 +269,7 @@ footer {
 
 @media screen and (max-width: 1070px) {
   .container-home {
-    height: 80vw;
+    height: 90vw;
   }
 }
 
@@ -281,7 +281,7 @@ footer {
 
 @media screen and (max-width: 500px) {
   .container-home {
-    height: 80vh;
+    height: 84.9vh;
   }
 }
 
@@ -374,7 +374,7 @@ footer {
 
 @media screen and (max-width: 500px) {
   .home-layer {
-    height: 80vh;
+    height: 85vh;
   }
 }
 
