@@ -30,6 +30,13 @@
   align-items: center;
 }
 
+
+@media screen and (max-width: 500px) {
+  .nav {
+    height: 6em;
+  }
+}
+
 .nav-list {
   overflow-x: hidden;
   list-style: none;
