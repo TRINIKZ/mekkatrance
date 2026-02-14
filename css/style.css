@@ -855,32 +855,52 @@ footer {
 
 /*carousel*/
 .carousel-container {
-  width: 100%;
+  width: 130%;
+  right: 15px;
   overflow: hidden;
-  transform: rotate(-0deg);
+  transform: rotate(0deg);
   margin-top: 1em;
   margin-bottom: 1em;
   position: relative;
+  z-index: 1;
+}
+.carousel-container2 {
+  width: 110%;
+  right: 15px;
+  overflow: hidden;
+  transform: rotate(0deg);
+  margin-top:-5em;
+  margin-bottom: 1em;
+  position: relative;
+  z-index: 2;
+}
+
+.carousel-track img,
+.carousel-track2 img,
+.carousel-track3 img{
+  height: 15em;
+  flex-shrink: 0;
+  object-fit: cover;
+  margin-right: 15px;
+  border-radius: 5%;
 }
 
 .carousel-track {
   display: flex;
   width: max-content;
-  animation: scrollCarousel 15s linear infinite;
+  animation: scrollCarousel 20s linear infinite;
+}
+
+.carousel-track2 {
+  display: flex;
+  width: max-content;
+  animation: scrollCarousel 15s linear infinite reverse;
 }
 
 @media screen and (max-width: 500px) {
   .carousel-track {
     animation: scrollCarousel 20s linear infinite;
   }
-}
-
-.carousel-track img {
-  height: 25em;
-  flex-shrink: 0;
-  object-fit: cover;
-  margin-right: 5px;
-  border-radius: 5%;
 }
 
 @media screen and (max-width: 500px) {
