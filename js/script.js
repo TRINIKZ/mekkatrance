@@ -19,25 +19,33 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
   /* ===============================
-     CARROSSEL MODELS
+     CARROSSEL MODELS (suporta N itens)
   ============================== */
 
   const track = document.querySelector('.model-content');
   const btnPrev = document.getElementById('arrow-left');
-  const btnNext = document.getElementById('goto-second');
-  
+  const btnNext = document.getElementById('arrow-right');
 
   if (track && btnPrev && btnNext) {
 
-    const slides =
-      track.querySelectorAll('.sketchfab-embed-wrapper');
-
-    let index = 0;
+    const slides = track.querySelectorAll('.sketchfab-embed-wrapper');
     const total = slides.length;
 
+    if (total > 0) {
+      const slidePercent = 100 / total;
+      track.style.width = `${total * 100}%`;
+      slides.forEach((slide) => {
+        slide.style.flex = `0 0 ${slidePercent}%`;
+        slide.style.width = `${slidePercent}%`;
+        slide.style.minWidth = `${slidePercent}%`;
+      });
+    }
+
+    let index = 0;
+
     function updateCarousel() {
-      track.style.transform =
-        `translateX(-${index * 50}%)`;
+      const percent = total > 0 ? (index * (100 / total)) : 0;
+      track.style.transform = `translateX(-${percent}%)`;
     }
 
     btnNext.addEventListener('click', () => {
@@ -56,14 +64,62 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
 
-    // reset ao abrir
     button.addEventListener('click', () => {
       index = 0;
       updateCarousel();
     });
-
   }
 
+  /* ===============================
+     STL ZONE – Galeria (abre/fecha no mesmo container)
+  ============================== */
+
+  const stlZoneContainer = document.querySelector('.stl-zone-container');
+  const stlZoneDefault = document.getElementById('stl-zone-default');
+  const stlZoneGallery = document.getElementById('stl-zone-gallery');
+  const stlZoneOpenBtn = document.getElementById('stl-zone-open-gallery');
+  const stlZoneCloseBtn = document.getElementById('stl-zone-close-gallery');
+
+  if (stlZoneContainer && stlZoneDefault && stlZoneGallery && stlZoneOpenBtn && stlZoneCloseBtn) {
+    stlZoneOpenBtn.addEventListener('click', () => {
+      stlZoneDefault.style.display = 'none';
+      stlZoneGallery.classList.remove('stl-zone-gallery-hidden');
+    });
+
+    stlZoneCloseBtn.addEventListener('click', () => {
+      stlZoneGallery.classList.add('stl-zone-gallery-hidden');
+      stlZoneDefault.style.display = 'flex';
+    });
+  }
+
+  /* Lightbox – clique na imagem expande; X fecha */
+  const stlZoneLightbox = document.getElementById('stl-zone-lightbox');
+  const stlZoneLightboxImg = document.getElementById('stl-zone-lightbox-img');
+  const stlZoneLightboxClose = document.getElementById('stl-zone-lightbox-close');
+  const stlZoneGridImgs = document.querySelectorAll('.stl-zone-grid-img');
+
+  if (stlZoneLightbox && stlZoneLightboxImg && stlZoneLightboxClose) {
+    stlZoneGridImgs.forEach((img) => {
+      img.addEventListener('click', () => {
+        stlZoneLightboxImg.src = img.src;
+        stlZoneLightboxImg.alt = img.alt;
+        stlZoneLightbox.classList.remove('stl-zone-lightbox-hidden');
+        stlZoneLightbox.setAttribute('aria-hidden', 'false');
+      });
+    });
+
+    stlZoneLightboxClose.addEventListener('click', () => {
+      stlZoneLightbox.classList.add('stl-zone-lightbox-hidden');
+      stlZoneLightbox.setAttribute('aria-hidden', 'true');
+    });
+
+    stlZoneLightbox.addEventListener('click', (e) => {
+      if (e.target === stlZoneLightbox) {
+        stlZoneLightbox.classList.add('stl-zone-lightbox-hidden');
+        stlZoneLightbox.setAttribute('aria-hidden', 'true');
+      }
+    });
+  }
 
   /* ===============================
      HACK TEXTO (AGORA CORRIGIDO)
