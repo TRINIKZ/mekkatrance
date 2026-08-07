@@ -57,10 +57,10 @@ document.addEventListener('DOMContentLoaded', () => {
     setInterval(pulseLeetTitle, 3000);
   }
 
-  const liquidCanvas = document.querySelector('.about-voronoi-flow');
+  const liquidCanvases = document.querySelectorAll('.about-voronoi-flow, .contact-liquid-flow');
 
-  if (liquidCanvas) {
-    const aboutSection = liquidCanvas.closest('.container-home2');
+  liquidCanvases.forEach((liquidCanvas) => {
+    const aboutSection = liquidCanvas.closest('.container-home2, .contact-zone');
     const context = liquidCanvas.getContext('2d');
     const texture = document.createElement('canvas');
     const textureContext = texture.getContext('2d');
@@ -116,9 +116,9 @@ document.addEventListener('DOMContentLoaded', () => {
             pointY -= dx * twist;
           }
 
-          const flow = pointX * 3.8
-            + Math.sin(pointY * 3.8 + seconds * 5.2) * 1.35
-            + Math.sin((pointX + pointY) * 2.3 - seconds * 3.7) * 0.75;
+          const flow = pointX * 2.6
+            + Math.sin(pointY * 2.6 + seconds * 5.2) * 1.35
+            + Math.sin((pointX + pointY) * 1.6 - seconds * 3.7) * 0.75;
           const broadBand = Math.sin(flow * Math.PI * 1.45);
           const fineVein = Math.sin(flow * Math.PI * 10);
           const transparentBand = broadBand > 0.55;
@@ -175,7 +175,7 @@ document.addEventListener('DOMContentLoaded', () => {
       if (pageVisible) resumeLiquid();
     });
     resumeLiquid();
-  }
+  });
 
   const voronoiCanvas = null;
 
