@@ -41,6 +41,7 @@
   overflow-x: hidden;
   list-style: none;
   display: flex;
+  align-items: center;
   gap: 25px;
 }
 
@@ -48,6 +49,7 @@
   .nav-list {
     font-size: 70%;
     left: auto;
+    gap: clamp(0.4rem, 2.5vw, 0.75rem);
   }
 }
 
@@ -1565,6 +1567,37 @@ footer:not(.contact-footer) {
 .nav { border-bottom: 1px solid var(--nothing-line); }
 .nav-list a { color: var(--nothing-paper); font-family: 'IBM Plex Mono', monospace; font-size: 0.78rem; letter-spacing: 0.08em; }
 .nav-list a:hover { color: var(--nothing-grey); }
+
+.nav-list .nav-rpg {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  min-height: 44px;
+  box-sizing: border-box;
+  padding-inline: 0.7rem;
+  border: 1px solid var(--nothing-grey);
+  font-weight: 700;
+}
+
+.nav-rpg::before {
+  content: '';
+  width: 0.9rem;
+  height: 0.9rem;
+  border: 1px solid currentColor;
+  border-radius: 2px;
+  box-sizing: border-box;
+  background: radial-gradient(circle at 27% 27%, currentColor 1px, transparent 1.5px),
+              radial-gradient(circle at center, currentColor 1px, transparent 1.5px),
+              radial-gradient(circle at 73% 73%, currentColor 1px, transparent 1.5px);
+}
+
+.nav-list .nav-rpg:hover,
+.nav-list .nav-rpg:focus-visible {
+  background: var(--nothing-paper);
+  color: var(--nothing-black);
+  border-color: var(--nothing-paper);
+}
 
 .home-layer { filter: grayscale(1) contrast(1.08); }
 .home-mid { mix-blend-mode: screen; opacity: 0.62; }

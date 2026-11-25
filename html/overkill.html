@@ -1,0 +1,269 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101113">
+  <meta name="rpg-api-origin" content="">
+  <title>OVERKILL SYNDROME · Mesa virtual | TRINIKZ</title>
+  <link rel="icon" href="../img/favicon.ico">
+  <link rel="stylesheet" href="../css/overkill.css?v=4.9.1">
+  <script type="module" src="../js/rpg.js?v=4.9.1"></script>
+</head>
+<body>
+  <svg class="icon-library" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <symbol id="i-back" viewBox="0 0 24 24"><path d="m11 6-6 6 6 6M5 12h15"/></symbol>
+    <symbol id="i-enter" viewBox="0 0 24 24"><path d="M14 4h6v16h-6M3 12h12m-5-5 5 5-5 5"/></symbol>
+    <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+    <symbol id="i-minus" viewBox="0 0 24 24"><path d="M5 12h14"/></symbol>
+    <symbol id="i-map" viewBox="0 0 24 24"><path d="m2 8 10-5 10 5-10 5zM2 12l10 5 10-5M2 16l10 5 10-5"/></symbol>
+    <symbol id="i-scene" viewBox="0 0 24 24"><path d="M3 7h13l-3-3m3 16 4-4-4-4M4 16h16M16 7l-3 3"/></symbol>
+    <symbol id="i-group" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><path d="M3 20v-2c0-6 12-6 12 0v2M16 5c4 0 5 6 1 7m1 3c3 0 4 2 4 5"/></symbol>
+    <symbol id="i-die" viewBox="0 0 24 24"><path d="m12 2 9 5v10l-9 5-9-5V7zM3 7l9 5 9-5m-9 5v10"/><path d="m7 7 0 .1m9 7 0 .1M7 14l0 .1" stroke-width="2.8"/></symbol>
+    <symbol id="i-log" viewBox="0 0 24 24"><path d="M3 12h4l3-7 4 15 3-9 2 1h2"/></symbol>
+    <symbol id="i-pointer" viewBox="0 0 24 24"><path d="m5 3 14 10-7 1-3 7z"/></symbol>
+    <symbol id="i-hand" viewBox="0 0 24 24"><path d="M7 12V7a1.5 1.5 0 0 1 3 0v4-6a1.5 1.5 0 0 1 3 0v6-5a1.5 1.5 0 0 1 3 0v6-3a1.5 1.5 0 0 1 3 0v7c0 4-2 6-6 6h-1c-2 0-4-1-5-3l-4-6c-1-2 1-3 2-2l2 2"/></symbol>
+    <symbol id="i-pencil" viewBox="0 0 24 24"><path d="m14 5 5 5M4 20l5-1 12-12-5-5L4 14zM4 20l1-6"/></symbol>
+    <symbol id="i-eraser" viewBox="0 0 24 24"><path d="m3 14 10-11 8 8-10 10H9zM8 9l8 8M11 21h10"/></symbol>
+    <symbol id="i-eye" viewBox="0 0 24 24"><path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7S2 12 2 12Z"/><circle cx="12" cy="12" r="3"/></symbol>
+    <symbol id="i-eye-off" viewBox="0 0 24 24"><path d="m3 3 18 18M9 5.5a11 11 0 0 1 3-.5c6 0 10 7 10 7a18 18 0 0 1-3 3.8M6 6.8A18 18 0 0 0 2 12s4 7 10 7a11 11 0 0 0 4-.8"/></symbol>
+    <symbol id="i-grid" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="1"/><path d="M9 3v18m6-18v18M3 9h18M3 15h18"/></symbol>
+    <symbol id="i-fit" viewBox="0 0 24 24"><path d="M4 10V4h6m4 0h6v6m0 4v6h-6m-4 0H4v-6"/></symbol>
+    <symbol id="i-link" viewBox="0 0 24 24"><path d="m9 15 6-6m-5-2 2-2a5 5 0 0 1 7 7l-2 2m-3 3-2 2a5 5 0 0 1-7-7l2-2"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path d="m6 6 12 12M18 6 6 18"/></symbol>
+    <symbol id="i-mouse" viewBox="0 0 24 24"><rect x="6" y="2" width="12" height="20" rx="6"/><path d="M12 6v4"/></symbol>
+  </svg>
+  <main id="welcome-screen" class="welcome-screen" aria-labelledby="welcome-title">
+    <div class="welcome-content">
+      <h1 id="welcome-title">OVERKILL <span>SYNDROME</span></h1>
+      <button class="button primary welcome-enter" id="join-room" type="button">Entrar</button>
+    </div>
+  </main>
+  <main id="tabletop" class="tabletop" aria-labelledby="game-title" hidden>
+    <canvas id="board" tabindex="0" aria-label="Mapa isométrico. Clique para selecionar ou mover. Mestre: segure Shift e clique nos personagens para selecionar o grupo." aria-describedby="board-hint"></canvas>
+    <header class="identity hud">
+      <a class="brand" href="../index.html" title="Voltar ao portfólio"><img alt="Portfólio TRINIKZ" src="../img/logo.png"></a>
+      <h1 id="game-title">OVERKILL <span>SYNDROME</span></h1>
+    </header>
+    <div class="scene-hud">
+    <div class="scene-card hud">
+      <div><p class="scene-caption">CENÁRIO <span id="scene-index">01</span></p><h2 id="scene-name">Docas de Kairo</h2></div>
+      <button class="icon-button" id="scene-tools" aria-label="Trocar cenário" title="Trocar cenário"><svg class="icon"><use href="#i-scene"/></svg></button>
+    </div>
+    <section id="party-hp" class="party-hp hud" aria-label="HP dos jogadores" hidden></section>
+    </div>
+    <div class="session-actions hud">
+      <button class="button secondary" id="leave-room" hidden>Sair</button>
+    </div>
+    <div id="brush-controls" class="brush-controls hud" hidden><span id="brush-preview" aria-hidden="true"></span><label for="brush-width">Pincel</label><input id="brush-width" type="range" min="1" max="24" value="3" step="1"><output id="brush-size-label" for="brush-width">3 px</output></div>
+    <div class="board-toolbar" role="group" aria-label="Ferramentas do mapa">
+              <button id="move-tool" class="icon-button" title="Selecionar e mover" aria-label="Selecionar e mover" aria-pressed="true"><svg class="icon"><use href="#i-pointer"/></svg></button>
+              <button id="pan-tool" class="icon-button" title="Arrastar mapa" aria-label="Arrastar mapa" aria-pressed="false"><svg class="icon"><use href="#i-hand"/></svg></button>
+              <span class="tool-divider"></span>
+              <button id="draw-tool" class="icon-button" title="Lápis livre" aria-label="Lápis livre" aria-pressed="false" disabled><svg class="icon"><use href="#i-pencil"/></svg></button>
+              <button id="erase-tool" class="icon-button" title="Borracha" aria-label="Borracha" aria-pressed="false" disabled><svg class="icon"><use href="#i-eraser"/></svg></button>
+              <span class="tool-divider"></span>
+              <button id="grid-tool" class="icon-button" title="Alternar grade" aria-label="Alternar grade" aria-pressed="true"><svg class="icon"><use href="#i-grid"/></svg></button>
+            </div>
+            <div class="zoom-toolbar" role="group" aria-label="Zoom">
+              <button id="zoom-out" class="icon-button" title="Afastar" aria-label="Afastar"><svg class="icon"><use href="#i-minus"/></svg></button>
+              <span id="zoom-level">100%</span>
+              <button id="zoom-in" class="icon-button" title="Aproximar" aria-label="Aproximar"><svg class="icon"><use href="#i-plus"/></svg></button>
+              <span class="tool-divider"></span>
+              <button id="reset-view" class="icon-button" title="Centralizar mapa" aria-label="Centralizar mapa"><svg class="icon"><use href="#i-fit"/></svg></button>
+            </div>
+          <div class="board-foot hud"><svg class="icon"><use href="#i-mouse"/></svg><span id="board-hint">Selecione um personagem e clique no mapa para movê-lo.</span></div>
+    <nav class="window-dock hud" aria-label="Janelas da mesa">
+      <button id="admin-tool" aria-controls="admin-window" aria-expanded="false"><svg class="icon"><use href="#i-scene"/></svg>Mestre</button>
+      <button aria-controls="characters-window" aria-expanded="false"><svg class="icon"><use href="#i-group"/></svg>Personagens</button>
+      <button aria-controls="dice-window" aria-expanded="false"><svg class="icon"><use href="#i-die"/></svg>Dados</button>
+      <button aria-controls="activity-window" aria-expanded="false"><svg class="icon"><use href="#i-log"/></svg>Registro</button>
+    </nav>
+    <section id="characters-window" class="float-window panel" aria-labelledby="roster-title" hidden>
+      <div class="panel-head"><div class="panel-heading"><svg class="icon accent"><use href="#i-group"/></svg><h2 id="roster-title">Personagens</h2><span id="roster-count" class="count">00</span></div><button class="window-close" aria-label="Fechar personagens">×</button></div>
+            <div id="roster-list" class="roster-list"></div>
+            <button id="edit-portrait" class="button secondary portrait-edit" hidden>Alterar imagem do personagem</button>
+            <div class="roster-actions"><button id="add-npc" class="add-npc"><svg class="icon"><use href="#i-plus"/></svg>Adicionar NPC</button><button id="remove-npc" class="remove-npc" hidden>Remover NPC</button></div>
+          </section>
+          <section id="dice-window" class="float-window panel dice-panel" hidden aria-labelledby="dice-title">
+            <div class="panel-head"><div class="panel-heading"><svg class="icon accent"><use href="#i-die"/></svg><h2 id="dice-title">Rolagem de dados</h2></div><button class="window-close" aria-label="Fechar dados">×</button></div>
+            <div class="dice-body">
+              <div id="dice-types" class="dice-types" role="group" aria-label="Tipo de dado">
+                <button data-sides="4">D4</button><button data-sides="6">D6</button><button data-sides="8">D8</button><button data-sides="10">D10</button><button data-sides="12">D12</button><button data-sides="20" aria-pressed="true">D20</button>
+              </div>
+              <div class="dice-console">
+                <div class="poly-die"><svg viewBox="0 0 90 90" aria-hidden="true"><path class="die-face" d="m45 3 34 19 4 43-38 22L7 65l4-43z"/><path d="M11 22 45 15l34 7M7 65l18-7 20 29 20-29 18 7M25 58l20-43 20 43zM11 22l14 36m54-36L65 58M45 3v12"/></svg><span id="die-result" aria-label="Resultado">—</span></div>
+                <div class="roll-area"><button class="roll-button" id="roll-die"><svg class="icon"><use href="#i-die"/></svg>Rolar dado</button><span id="last-roll" aria-live="polite">Nenhuma rolagem</span></div>
+              </div>
+            </div>
+          </section>
+      <section id="activity-window" class="float-window panel activity-panel" hidden aria-labelledby="activity-title">
+        <div class="panel-head"><div class="panel-heading"><svg class="icon accent"><use href="#i-log"/></svg><h2 id="activity-title">Registro da mesa</h2><span id="activity-count" class="count">0</span></div><button class="window-close" aria-label="Fechar registro">×</button></div>
+        <div id="activity-list" class="activity-list" role="log" aria-live="off"></div>
+      </section>
+    <!-- ================= ADMIN / MESTRE ================= -->
+    <section id="admin-window" class="float-window panel" hidden aria-labelledby="admin-title">
+      <div class="panel-head"><div class="panel-heading"><svg class="icon accent"><use href="#i-scene"/></svg><h2 id="admin-title">Mestre</h2></div><button class="window-close" aria-label="Fechar administração">×</button></div>
+      <div class="admin-body">
+        <p class="admin-access" id="admin-access">Acesso restrito ao mestre</p>
+        <button id="admin-logout" class="button secondary wide" type="button">Bloquear administração</button>
+        <div class="scene-heading"><h3>Cenário da mesa</h3><button class="button secondary" id="create-space" type="button">Criar espaço</button></div>
+        <div class="scene-options admin-scenes" id="admin-scenes">
+          <button data-admin-scene="docks"><span class="scene-chip docks"></span>Docas de Kairo</button>
+          <button data-admin-scene="lab"><span class="scene-chip lab"></span>Laboratório Íon</button>
+          <button data-admin-scene="ruins"><span class="scene-chip ruins"></span>Ruínas de Érebo</button>
+          <button data-admin-scene="city"><span class="scene-chip city"></span>Cidade Grafitada</button>
+        </div>
+        <h3>Trilha sonora</h3>
+        <form id="music-form"><label for="music-url">Link de música ou áudio</label><input id="music-url" maxlength="1500" required placeholder="YouTube Music, YouTube ou /audio/tema.mp3">
+          <label for="music-volume">Volume da mesa <output id="music-volume-label">50%</output></label><input id="music-volume" type="range" min="0" max="100" value="50">
+          <label for="track-volume">Volume da música <output id="track-volume-label">100%</output></label><input id="track-volume" type="range" min="0" max="100" value="100">
+          <div class="admin-actions"><button type="submit" class="button primary">Tocar</button><button type="button" id="music-stop" class="button secondary">Parar</button></div>
+        </form>
+        <p id="music-status" role="status">Nenhuma música em reprodução.</p>
+        <h3>Personagens e NPCs</h3><button id="admin-add-npc" class="button secondary wide">Adicionar NPC</button><button id="admin-remove-npc" class="button secondary wide" disabled>Remover NPC selecionado</button>
+      </div>
+    </section>
+    <!-- ================= FIM ADMIN ================= -->
+    <button id="audio-unlock" class="button hud secondary" hidden>Ativar áudio da mesa</button>
+    <audio id="table-music" loop preload="none"></audio>
+    <aside id="youtube-music" class="youtube-music" hidden aria-label="Player de música do YouTube">
+      <div class="music-layout">
+        <div class="local-volume"><label for="player-volume">Seu volume</label><input id="player-volume" type="range" min="0" max="200" value="100" aria-orientation="vertical" aria-describedby="effective-volume"><output id="player-volume-label">100%</output><small id="effective-volume">Saída 50%</small></div>
+        <div class="music-video"><div id="youtube-player"></div></div>
+      </div>
+      <p id="youtube-message" role="status"></p>
+      <div class="sound-meter">
+        <canvas id="sound-trace" width="600" height="60" aria-hidden="true"></canvas>
+        <button type="button" id="wave-control" class="quiet-button" hidden>Ativar ondas da aba</button>
+        <p id="wave-status" role="status"></p>
+      </div>
+    </aside>
+    <section id="direct-stage" class="direct-stage" role="dialog" aria-modal="true" aria-label="Diálogo direto" hidden>
+      <button id="direct-close" class="icon-button" aria-label="Fechar diálogo"><svg class="icon"><use href="#i-close"/></svg></button>
+      <div id="direct-characters" class="direct-characters" role="group" aria-label="Personagens do diálogo"></div>
+    </section>
+    <section id="scene-transition" class="scene-transition" aria-hidden="true" hidden>
+      <div class="scene-transition__layer scene-transition__layer--black"></div>
+      <div class="scene-transition__layer scene-transition__layer--dark"></div>
+      <div class="scene-transition__panel">
+        <div class="scene-transition__invert"></div>
+        <p class="scene-transition__eyebrow">Transição de mapa</p>
+        <h2 class="scene-transition__title">OVERKILL <span>SYNDROME</span></h2>
+        <p id="scene-transition-scene" class="scene-transition__scene">Docas de Kairo</p>
+      </div>
+    </section>
+    <div id="entity-menu" class="entity-menu" role="group" aria-labelledby="entity-menu-name" hidden>
+      <strong id="entity-menu-name"></strong>
+      <button id="entity-attack" type="button">Atacar</button>
+      <button id="investigate" type="button">Investigar</button>
+    </div>
+    <button id="interact-tool" class="button hud" aria-pressed="false">Interagir</button>
+  </main>
+  <dialog id="investigation-dialog" aria-labelledby="investigation-title">
+    <button class="dialog-close icon-button" data-close aria-label="Fechar">×</button>
+    <h2 id="investigation-title">Investigação</h2>
+    <p id="investigation-place" class="dialog-intro"></p>
+    <p id="investigation-detail"></p>
+  </dialog>
+  <dialog id="hp-dialog" aria-labelledby="hp-title">
+    <button class="dialog-close icon-button" data-close aria-label="Fechar">×</button>
+    <h2 id="hp-title">Editar HP</h2>
+    <form id="hp-form">
+      <label>HP atual<input id="hp-current" type="number" min="0" max="999999" step="1" required></label>
+      <label>HP máximo<input id="hp-maximum" type="number" min="1" max="999999" step="1" required></label>
+      <p id="hp-error" class="form-error" role="alert"></p>
+      <button type="submit" class="button primary wide">Salvar HP</button>
+    </form>
+  </dialog>
+  <dialog id="admin-login-dialog" aria-labelledby="admin-login-title">
+    <button class="dialog-close icon-button" data-close aria-label="Fechar">×</button>
+    <h2 id="admin-login-title">Acesso do mestre</h2>
+    <form id="admin-login-form">
+      <label id="admin-user-row">Usuário<input id="admin-user" name="username" autofocus autocomplete="username" required maxlength="100"></label>
+      <label>Senha<input id="admin-password" type="password" name="password" autocomplete="current-password" required maxlength="200"></label>
+      <p id="admin-login-error" class="form-error" role="alert"></p>
+      <button type="submit" class="button primary wide">Desbloquear administração</button>
+    </form>
+  </dialog>
+  <dialog id="interaction-dialog" aria-labelledby="interaction-title">
+    <button class="dialog-close icon-button" data-close aria-label="Fechar">×</button>
+    <p class="kicker">INTERAÇÃO</p><h2 id="interaction-title"></h2>
+    <div class="interaction-options" role="group" aria-label="Opções de interação">
+      <button id="talk-option" class="button secondary" type="button">Diálogo direto <span>›</span></button>
+      <button id="inspect-option" class="button secondary" type="button">Examinar <span>›</span></button>
+    </div>
+    <p id="inspect-detail" hidden></p>
+  </dialog>
+  <dialog id="room-dialog" aria-labelledby="room-title">
+    <button type="button" class="dialog-close icon-button" data-close aria-label="Fechar"><svg class="icon"><use href="#i-close"/></svg></button>
+    <h2 id="room-title">Entrar</h2><p id="room-intro" class="dialog-intro">Informe o nome do seu personagem.</p>
+    <form id="room-form">
+      <label>Nome do personagem<input id="player-name" required maxlength="40" autocomplete="off" placeholder="Nome do personagem"></label>
+      <div id="character-choices" hidden>
+        <label for="character-choice">Escolha sua ficha</label>
+        <select id="character-choice" disabled></select>
+        <div id="character-choice-preview" class="character-choice-preview" aria-live="polite"></div>
+      </div>
+      <div id="character-sheet" class="character-sheet" hidden>
+        <label>Imagem do personagem<input type="file" id="player-image-file" accept="image/png,image/jpeg,image/webp"></label>
+        <label>Ou link da imagem<input id="player-portrait" maxlength="1500" placeholder="https://… ou /img/rpg/personagem.png"></label>
+      </div>
+      <p id="room-error" class="form-error" role="alert"></p><button type="submit" class="button primary wide" id="room-submit">Continuar</button>
+      <button type="button" class="button secondary wide" id="room-back" hidden>Voltar</button>
+    </form>
+  </dialog>
+  <dialog id="scene-dialog" aria-labelledby="scene-title">
+    <button class="dialog-close icon-button" data-close aria-label="Fechar"><svg class="icon"><use href="#i-close"/></svg></button>
+    <p class="kicker">FERRAMENTAS DO MESTRE</p><h2 id="scene-title">Escolher cenário</h2>
+    <div class="scene-options" id="scene-list">
+      <button data-scene="docks"><span class="scene-chip docks"></span>Docas de Kairo</button>
+      <button data-scene="lab"><span class="scene-chip lab"></span>Laboratório Íon</button>
+      <button data-scene="ruins"><span class="scene-chip ruins"></span>Ruínas de Érebo</button>
+      <button data-scene="city"><span class="scene-chip city"></span>Cidade Grafitada</button>
+    </div>
+  </dialog>
+  <dialog id="space-editor" aria-labelledby="space-editor-title">
+  <header class="space-topbar">
+    <button type="button" class="button secondary" id="space-back">Voltar à mesa</button>
+    <h2 id="space-editor-title">Criar espaço</h2>
+    <button type="button" class="button primary" id="space-save">Salvar espaço</button>
+  </header>
+  <div class="space-layout">
+    <aside class="space-tools" aria-label="Ferramentas do editor">
+      <div class="space-section">
+        <label for="space-name">Nome do espaço</label><input id="space-name" maxlength="40" placeholder="Ex.: Distrito industrial" autocomplete="off">
+        <label for="space-size">Dimensões (tiles por lado)</label>
+        <div class="space-inline"><input id="space-size" type="number" min="12" max="50" value="24" step="1"><button class="button secondary" type="button" id="space-resize">Aplicar</button></div>
+      </div>
+      <div class="space-section"><h3>Terreno</h3><div id="space-terrain" class="space-palette"></div>
+        <div class="space-inline"><label for="space-brush">Pincel</label><select id="space-brush"><option value="1">1 × 1</option><option value="3">3 × 3</option><option value="5">5 × 5</option></select></div>
+        <button class="button secondary" type="button" id="space-fill">Preencher terreno</button>
+      </div>
+      <div class="space-section"><h3>Objetos</h3><div id="space-objects" class="space-palette"></div><button class="button secondary" id="space-rotate" type="button">Girar 90° · R</button></div>
+      <div class="space-section"><h3>Edição</h3><div class="space-palette"><button type="button" id="space-erase" aria-pressed="false">Borracha</button><button type="button" id="space-pan" aria-pressed="false">Mover câmera</button><button type="button" id="space-undo">Desfazer</button><button type="button" id="space-redo">Refazer</button></div></div>
+    </aside>
+    <div class="space-workbench">
+      <div class="space-canvas-head"><span id="space-dimensions">24 × 24 tiles</span><div class="space-view-buttons"><button type="button" id="space-grid" aria-pressed="true">Grade</button><button type="button" id="space-minus" aria-label="Diminuir zoom">−</button><output id="space-zoom">100%</output><button type="button" id="space-plus" aria-label="Aumentar zoom">+</button><button type="button" id="space-fit">Enquadrar</button></div></div>
+      <canvas id="space-canvas" tabindex="0" aria-label="Editor isométrico. Use as setas para selecionar tile, Enter para aplicar a ferramenta."></canvas>
+      <div class="space-foot"><span id="space-help">Pinte o terreno ou escolha um objeto. Arraste com o botão direito para mover a câmera.</span><span id="space-coords"></span></div>
+    </div>
+  </div>
+  <footer class="space-bottom"><span id="space-count"></span><p id="space-error" role="alert"></p><span>Ctrl+Z / Ctrl+Y · R para girar</span></footer>
+</dialog>
+<dialog id="npc-dialog" aria-labelledby="npc-title">
+    <button class="dialog-close icon-button" data-close aria-label="Fechar"><svg class="icon"><use href="#i-close"/></svg></button>
+    <p class="kicker">FERRAMENTAS DO MESTRE</p><h2 id="npc-title">Adicionar NPC</h2>
+    <form id="npc-form"><label>Nome do NPC<input id="npc-name" maxlength="40" required placeholder="Nome ou indicativo"></label>
+      <label>Cor no tabuleiro<select id="npc-color"><option value="#e9aa64">Âmbar</option><option value="#64d9df">Ciano</option><option value="#ee659b">Rosa</option><option value="#b194ed">Lilás</option></select></label>
+      <label>Imagem do NPC (opcional)<input id="npc-portrait" maxlength="1500" placeholder="https://… ou /img/rpg/npc.png"></label>
+      <p id="npc-error" class="form-error" role="alert"></p><button class="button primary wide" id="npc-submit" type="submit">Posicionar no mapa</button></form>
+  </dialog>
+  <dialog id="portrait-dialog" aria-labelledby="portrait-title">
+    <button class="dialog-close icon-button" data-close aria-label="Fechar"><svg class="icon"><use href="#i-close"/></svg></button><h2 id="portrait-title">Imagem do personagem</h2>
+    <form id="portrait-form"><label>URL da imagem (vazio = padrão)<input id="portrait-url" maxlength="1500" placeholder="https://… ou /img/rpg/personagem.png"></label><button class="button primary wide" type="submit">Salvar imagem</button></form>
+  </dialog>
+  <div id="notice" role="status" hidden></div>
+  <noscript>Ative o JavaScript para usar o tabuleiro.</noscript>
+</body>
+</html>

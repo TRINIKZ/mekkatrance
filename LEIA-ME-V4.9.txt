@@ -1,0 +1,12 @@
+OVERKILL SYNDROME | V4.9 EXPERIMENTAL
+
+Instalação: pare o servidor (Ctrl+C), extraia esta atualização na raiz do projeto V4.8.2 substituindo os arquivos, execute npm.cmd start e atualize a página com Ctrl+F5.
+Não apague nem substitua .rpg-data. O pacote não contém dados salvos nem fontes.
+
+Como usar: entre como mestre, abra Mestre e clique em Criar espaço ao lado de Cenário da mesa. Escolha um nome e um tamanho de 12 a 50 tiles por lado. Pinte os materiais e coloque objetos. O mapa começa em concreto (24x24). O botão Salvar espaço cria um cenário persistente, que aparece na lista de cenários. Salvar não troca a cena da mesa. Selecione o cenário para exibi-lo a todos.
+
+Controles: clique/arraste para pintar; clique para posicionar objetos; R gira; botão direito ou do meio arrastando move a câmera; roda do mouse altera zoom; Ctrl+Z desfaz; Ctrl+Y ou Ctrl+Shift+Z refaz. A borracha remove objetos ou restaura o concreto. A grade é opcional.
+
+Limites experimentais: 20 espaços, 300 objetos por espaço, mapas quadrados de 12 a 50 tiles, sem colisões físicas, importação de imagens nem edição/exclusão de mapas já salvos. O espaço existente continua disponível; não alteramos os dados do RPG.
+
+Verificação: testes de API em diretório temporário (permissões, validações, criação, seleção, movimento, desenhos, posições por cenário e persistência após reinício) aprovados. Sintaxe JS e chamadas de renderização em canvas simulado aprovadas. Teste visual/interação no Chromium não realizado: navegação bloqueada pelo ambiente.

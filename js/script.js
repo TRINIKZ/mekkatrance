@@ -450,7 +450,7 @@ document.addEventListener('DOMContentLoaded', () => {
     "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890!@#$%^&*";
 
   const elements = document.querySelectorAll(
-    ".home-text-line, #button, .nav-list a"
+    ".home-text-line, #button, .nav-list a:not(.nav-rpg)"
   );
 
   elements.forEach(el => {
